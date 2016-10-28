@@ -90,7 +90,8 @@ class App extends React.Component {
     if (this.state.gameStart) {
       return(
         <div>
-          <div>
+          <div className="stats">
+          <h1 className="red-button">Game Stats</h1>
             <p>Valid Sets: {this.state.sets}</p>
             <p>Invalid Sets: {this.state.invalidSets}</p>
           </div>

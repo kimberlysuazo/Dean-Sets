@@ -57,3 +57,30 @@ body {
   text-shadow: 0px -2px #BD3E31;
 }
 
+
+.stats {
+  width: 150px;
+  border: 2px solid black;
+  margin: auto;
+  margin-top: 240px;
+  float: left;
+  padding-bottom: 20px;
+
+}
+
+.stats h1 {
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+
+}
+
+.stats p {
+  padding-left: 10px;
+}
+
+.timer {
+  position: absolute;
+  margin-top: 390px;
+  margin-left: 12px;
+}
