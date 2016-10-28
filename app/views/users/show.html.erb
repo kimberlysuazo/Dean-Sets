@@ -1,1 +1,8 @@
-<h1><%= @user.username %>'s stats:</h1>
+<div class= "user-stats">
+  <h1 class="red-button">All-Time Stats</h1>
+
+  <p>Total Games Played: <%= @games.count %></p>
+  <p>Total Valid Sets: <%= valid_sets(@games) %></p>
+  <p>Total Invalid Sets: <%= invalid_sets(@games) %></p>
+
+</div>

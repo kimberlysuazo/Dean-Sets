@@ -17,8 +17,9 @@ class DadApp extends React.Component {
     if (this.state.timer) {
       return(
         <div>
+          <Timer  start={Date.now()}/>
           <App gameStart={this.state.gameStart} startTimer={this.startTimer}/>
-          <Timer start={Date.now()}/>
+
         </div>
       )
     } else {

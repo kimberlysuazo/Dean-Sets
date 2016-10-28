@@ -4,6 +4,7 @@ class App extends React.Component {
     this.onCardClick = this.onCardClick.bind(this);
     this.startGame = this.startGame.bind(this);
     this.updateNewUser = this.updateNewUser.bind(this);
+    this.saveGame = this.saveGame.bind(this);
     this.state = {
       deck: [],
       gameStart: false,
@@ -14,6 +15,18 @@ class App extends React.Component {
         loggedIn: false
       }
     }
+  }
+
+  saveGame() {
+    var invalid = this.state.invalidSets;
+    debugger;
+    $.ajax({
+      url: '/games',
+      method: "post",
+      data: {sets: this.state.sets, invalid_sets: this.state.invalidSets}
+    }).done(function(response) {
+
+    }.bind(this));
   }
 
   updateNewUser(response) {
@@ -77,11 +90,12 @@ class App extends React.Component {
     if (this.state.gameStart) {
       return(
         <div>
-          <div>
+          <div className="stats">
+          <h1 className="red-button">Game Stats</h1>
             <p>Valid Sets: {this.state.sets}</p>
             <p>Invalid Sets: {this.state.invalidSets}</p>
           </div>
-          <Game deck={this.state.deck} uponClick={this.onCardClick} firstGo={this.state.firstGo}/>
+          <Game gameSaver={this.saveGame} deck={this.state.deck} uponClick={this.onCardClick} firstGo={this.state.firstGo}/>
 
         </div>
       )
