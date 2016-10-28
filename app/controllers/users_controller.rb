@@ -36,6 +36,8 @@ class UsersController < ApplicationController
   def show
     require_user
     @user = current_user
+    @games = @user.games.all
+    
   end
 
   private
